@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 
 const NavLink = ({ to, children }) => (
@@ -23,16 +23,6 @@ const Navbar = () => {
                                 alt="Logo"
                             />
                         </Link>
-                        <div className="hidden md:block">
-                            <div className="ml-10 flex items-baseline space-x-4">
-                                <NavLink to="/">Home</NavLink>
-                                <NavLink to="/hotels">Hotels</NavLink>
-                                <NavLink to="/blood">Blood</NavLink>
-                                <NavLink to="/bloodForm">Blood Form</NavLink>
-                                <NavLink to="/libManage">Lib Mangment</NavLink>
-                                <NavLink to="/FileExample">File</NavLink>
-                            </div>
-                        </div>
                     </div>
                     <div className="hidden md:block">
                         <div className="ml-4 flex items-center md:ml-6">
