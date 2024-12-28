@@ -112,7 +112,7 @@ const ProductDetail = () => {
                                     <div>
                                         <p className="text-sm text-gray-500">Price</p>
                                         <p className="text-3xl font-bold text-gray-900">
-                                            ${product.price.toFixed(2)}
+                                            {product.price.toFixed(2)}
                                         </p>
                                     </div>
                                 </div>

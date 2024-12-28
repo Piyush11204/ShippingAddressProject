@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import Register from "./pages/Register";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import NavbarPart2 from "./components/NavbarPart2";
 import AddProduct from "./pages/AddProduct";
 import ProductsList from "./components/Products/ProductsList";
@@ -18,7 +18,7 @@ import BuyerAddress from "./components/Address/BuyerAddress";
 function App() {
   return (
     <Router>
-      <Navbar /> 
+      {/* <Navbar />  */}
       <NavbarPart2 /> 
       <Routes>
         <Route path="/login" element={<Login />} />
