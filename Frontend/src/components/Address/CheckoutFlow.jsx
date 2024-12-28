@@ -6,10 +6,8 @@ import {
   MapPin,
   Plus,
   Trash,
-
   ArrowLeft,
   ShoppingBag,
-
   DollarSign,
 } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -190,7 +188,7 @@ const CheckoutFlow = () => {
     }
 
     try {
-      await fetch(`http://localhost:3000/api/product/${id}/buy`, {
+      await fetch(`http://localhost:3000/api/product/products/${id}/buy`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`,
@@ -363,6 +361,15 @@ const CheckoutFlow = () => {
         {/* Map Display */}
         <div className="max-w-4xl mx-auto mb-6 h-64 bg-gray-200 rounded-lg">
         {/* Map component implementation goes here */}
+        <iframe
+          title="Map"
+          src={`https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${coordinates.lat},${coordinates.lng}&zoom=14`}
+          width="100%"
+          height="100%"
+          allowFullScreen
+          loading="lazy"
+          className="rounded-lg"
+        />
         <p className="text-center pt-28 text-gray-500">Map Placeholder</p>
         </div>
         {/* Confirm Purchase */}

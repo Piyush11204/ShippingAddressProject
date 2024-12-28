@@ -74,7 +74,7 @@ function App() {
           }
         />
         <Route
-          path="/buyerAddress"
+          path="/buyerAddress/:id"
           element={
             <PrivateRoute>
              <BuyerAddress />

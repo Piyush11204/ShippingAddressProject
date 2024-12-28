@@ -44,7 +44,7 @@ const ProductDetail = () => {
 
     const handleBuy = () => {
         // navigate(`/buyerAddress/${id}`);
-        navigate(`/buyerAddress/`);
+        navigate(`/buyerAddress/${id}`);
     };
 
     if (loading) return (
