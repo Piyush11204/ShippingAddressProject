@@ -13,9 +13,9 @@ const CheckoutFlow = () => {
   const [coordinates, setCoordinates] = useState(
     localStorage.getItem('userLatitude') && localStorage.getItem('userLongitude')
       ? {
-          lat: parseFloat(localStorage.getItem('userLatitude')),
-          lng: parseFloat(localStorage.getItem('userLongitude')),
-        }
+        lat: parseFloat(localStorage.getItem('userLatitude')),
+        lng: parseFloat(localStorage.getItem('userLongitude')),
+      }
       : { lat: 0, lng: 0 }
   );
   const [selectedAddress, setSelectedAddress] = useState(null);
@@ -136,7 +136,12 @@ const CheckoutFlow = () => {
       </div>
 
       {/* Map Component */}
-      <MapDisplay apiKey={apiKey} coordinates={coordinates} />
+      <MapDisplay
+        apiKey={apiKey}
+        coordinates={coordinates}
+        zoom={14}
+        markerColor="#3B82F6"
+      />
 
       {/* Confirm Purchase Button */}
       <div className="max-w-4xl mx-auto mb-6 flex justify-end">
