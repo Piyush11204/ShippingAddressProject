@@ -3,7 +3,7 @@
 ## ⚠️ Important Note
 This project includes API keys and environment variables in the codebase for demonstration and quick testing purposes only. In a production environment, these should be properly secured and never committed to version control.
 
-If Needed, we can also add the payment getway like this to the: [Phone Pe Integration Demo](https://phone-pe-eta.vercel.app/)
+If Needed, we can also add the payment getway like this : [Phone Pe Integration Demo](https://phone-pe-eta.vercel.app/)
 
 ## 🚀 Project Overview
 This is a full-stack shipping management system built with React + Vite for the frontend and Node.js with MongoDB Atlas for the backend. The project demonstrates the integration of mapping functionality using Mapbox and can be extended with payment gateway integration.
