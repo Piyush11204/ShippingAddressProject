@@ -40,6 +40,31 @@ const BuyProductList = () => {
     if (!products) return [];
     return ['all', ...new Set(products.map(product => product.category))];
   };
+  const exportHistory = () => {
+    if (!products) return;
+
+    const headers = ['Product Name', 'Category', 'Brand', 'Price', 'Seller', 'Date'];
+    const rows = products.map(product => [
+      product.ProductName,
+      product.category,
+      product.brand,
+      product.price,
+      product.owner,
+      new Date(product.createdAt).toLocaleDateString(),
+    ]);
+
+    const csvContent = [headers, ...rows].map(e => e.join(",")).join("\n");
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", "purchase_history.csv");
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const filteredProducts = products
     ?.filter(product => {
@@ -111,14 +136,14 @@ const BuyProductList = () => {
           </div>
           
           <button
-            onClick={() => {/* Add export functionality */}}
+            onClick={() => {exportHistory()} }
             className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors text-gray-700"
           >
             <Download className="h-4 w-4" />
             Export History
           </button>
         </div>
-
+       
         {/* Filters Section */}
         <div className="bg-white rounded-xl shadow-sm p-4 mb-6">
           <div className="flex flex-col lg:flex-row gap-4">
@@ -205,7 +230,7 @@ const BuyProductList = () => {
                     <tr key={product._id} className="hover:bg-gray-50">
                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm">
                         <div className="font-medium text-gray-900">{product.ProductName}</div>
-                        <div className="text-gray-500">{new Date(product.createdAt).toLocaleDateString()}</div>
+                        {/* <div className="text-gray-500">{new Date(product.createdAt).toLocaleDateString()}</div> */}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm">
                         <span className="inline-flex rounded-full bg-blue-100 px-2 py-1 text-xs font-semibold text-blue-800">

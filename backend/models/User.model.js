@@ -67,7 +67,7 @@ userSchema.methods.checkPassword = async function (password) {
 // Generate access token method
 userSchema.methods.generateAccessToken = function () {
 	return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-		expiresIn: "1h",
+		expiresIn: "1d",
 	});
 };
 

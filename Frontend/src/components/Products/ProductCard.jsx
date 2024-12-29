@@ -54,11 +54,11 @@ const ProductCard = ({ product }) => {
         {/* Price Section */}
         <div className="flex items-baseline gap-2 mb-3">
           <span className="text-lg font-bold text-gray-900">
-            ${product.price.toFixed(2)}
+            ₹{product.price.toFixed(2)}/-
           </span>
           {product.originalPrice && (
             <span className="text-sm text-gray-500 line-through">
-              ${product.originalPrice.toFixed(2)}
+              ₹{product.originalPrice.toFixed(2)}/-
             </span>
           )}
         </div>

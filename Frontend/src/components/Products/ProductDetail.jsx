@@ -8,7 +8,6 @@ import {
   AlertCircle, 
   ArrowLeft,
   Package,
-  DollarSign,
   Loader2
 } from "lucide-react";
 
@@ -108,11 +107,11 @@ const ProductDetail = () => {
 
                             <div className="flex items-center justify-between pt-8 border-t">
                                 <div className="flex items-center gap-2">
-                                    <DollarSign className="h-6 w-6 text-green-600" />
+                                    {/* <DollarSign className="h-6 w-6 text-green-600" /> */}
                                     <div>
                                         <p className="text-sm text-gray-500">Price</p>
                                         <p className="text-3xl font-bold text-gray-900">
-                                            {product.price.toFixed(2)}
+                                            ₹{product.price.toFixed(2)}/-
                                         </p>
                                     </div>
                                 </div>
