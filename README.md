@@ -73,8 +73,8 @@ project-root/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/shipping-management.git
-cd shipping-management
+git clone https://github.com/Piyush11204/ShippingAddressProject.git
+cd ShippingAddressProject
 ```
 
 2. Install Frontend Dependencies
